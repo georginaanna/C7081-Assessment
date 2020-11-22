@@ -115,7 +115,7 @@ The PC1 obtained was 90.61% for proportion of variance demonstrating that more t
 
 ```{r echo=FALSE}
 
-B <- c(1.4, 2.21, 2.21)
+B <- c(1.41, 2.21, 2.17)
 barplot(B, main="Bar Chart of the RMSE values for each model", xlab="Model", ylab="RMSE", names.arg=c("Linear Model","Random Forest(mrty=5)","Random Forest(mtry=2)"),
 border="red", density=c(90, 70, 50, 40, 30, 20, 10))
 
