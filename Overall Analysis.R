@@ -172,7 +172,7 @@ library(fpc)
 library(randomForest)
 
 set.seed(1)
-rf.data= randomForest(Category~.-total.score,data=train1,
+rf.data= randomForest(Category~.-total.score-PC1,data=train1,
                       mtry=5, importance =TRUE)
 rf.data ## values for variance explained and the mean of squared residuals 
 summary(rf.data)
@@ -181,12 +181,8 @@ yhat.rf = predict(rf.data ,data=test1)
 set.seed(1)
 mean((yhat.rf)^2) ## MSE
 
-importance(rf.data) ## Using the importance() function, we can view the importance of each variable.
-## this rises a negative variable importance for parental level of education
-varImpPlot(rf.data)
-
 set.seed(1)
-rf.data1= randomForest(Category~.-total.score,data=train1,
+rf.data1= randomForest(Category~.-total.score-PC1,data=train1,
                        mtry=2, importance =TRUE)
 rf.data1 ## value for % variance explained and the mean of squared residuals
 summary(rf.data1)
@@ -195,4 +191,6 @@ yhat.rf = predict(rf.data1 ,data=test1)
 set.seed(1)
 mean((yhat.rf)^2) ## MSE
 
-
+importance(rf.data1) ## Using the importance() function, we can view the importance of each variable.
+## this rises a negative variable importance for parental level of education
+varImpPlot(rf.data1)
