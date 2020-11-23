@@ -125,6 +125,8 @@ anova(lm.fit1,lm.fit2) ## anova of both models
 ## Prediction from the best fitted model 
 set.seed(1) ## set the seed for reproducability
 anova(lm.fit1) anova 
+plot(lm.fit1) ## this model fits ok with the data set
+
 set.seed(1)
 y_pred1 <- predict(lm.fit1, newdata = test)
 set.seed(1)
