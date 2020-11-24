@@ -111,7 +111,7 @@ summary(pr.out) ## summary of the PCA
 
 1. To find a model that is best at predicting student exam scores based on socioeconomic information.
 
-The PC1 obtained was 90.61% for proportion of variance demonstrating that more than 90% of the data is in the dependent variable “PC1” that was used for the multiple linear regression models. The multiple linear regression model chosen had an AIC of 2886.7, upon predictions an MSE (mean squared error) of 1.98, an RMSE (root mean squared error) of 1.40, in comparison to the random forest model that yielded an RMSE of 2.21 with all predictors and the random forest model with 2 predictors that yielded an RMSE of 2.21. 
+The PC1 obtained was 90.61% for proportion of variance demonstrating that more than 90% of the data is in the dependent variable “PC1” that was used for the multiple linear regression models. The multiple linear regression model chosen had an AIC of 2886.7, upon predictions an MSE (mean squared error) of 1.98, an RMSE (root mean squared error) of 1.40, in comparison to the random forest model that yielded an RMSE of 2.21 with all predictors and the random forest model with 2 predictors that yielded an RMSE of 2.21. The rsquared value for the linear regression model was 0.23, suggesting that the sum of square residuals is 77%. 
 
 ```{r echo=FALSE}
 
@@ -207,7 +207,7 @@ The anova from the linear model with the lowest AIC demonstrated that parental l
 
 ## Conclusion 
 
-Too conclude the linear model had the lowest RMSE.A random forest was carried out however when the variable importance of each variable was calculated the variable importance for parental level of education was negative, from EDA a correlation does exist between parental level of education and exam score therefore we would conclude that some objects within the data have similar predictors leading to very different outcomes suggesting this model is not suited to predicting exam score.
+Too conclude the linear model had the lowest RMSE, however an r squared value of 0.23, this suggests an sum of squares residual error of 77%, concluding that despite the better RMSE value, this model is not the best fit for the data.In addition to this it also shows that there are other variables that aren't included in the data that have a have a bigger effect/ contribution to the dependent variable more than the variables in the data currently used in the analysis. A random forest was carried out however when the variable importance of each variable was calculated the variable importance for parental level of education was negative, from EDA a correlation does exist between parental level of education and exam score therefore we would conclude that some objects within the data have similar predictors leading to very different outcomes suggesting this model is not suited to predicting exam score.Overall, neither model provided a good fit for the data, but at of all of the models the multiple linear model with the use of principal component analysis seemed the better one. 
 
 ## References 
 
