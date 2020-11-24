@@ -124,13 +124,13 @@ anova(lm.fit1,lm.fit2) ## anova of both models
 
 ## Prediction from the best fitted model 
 set.seed(1) ## set the seed for reproducability
-anova(lm.fit1) anova 
+anova(lm.fit1) ## anova 
 plot(lm.fit1) ## this model fits ok with the data set
 
 set.seed(1)
 y_pred1 <- predict(lm.fit1, newdata = test)
 set.seed(1)
-summary(lm.fit1)$r.squared # your r squared
+summary(lm.fit1)$r.squared # here we have an rsquared value of 23% this shows that the model explains 23% of the variance of y
 set.seed(1)
 mse.lin <- mean((test$PC1 - y_pred1)^2)
 mse.lin ## the MSE 
